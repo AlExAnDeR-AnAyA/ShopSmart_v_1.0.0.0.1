@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - ShopSmart</title>
+    <link rel="stylesheet" href="http://localhost/shopsmart_v_1.0.0.0.1/css/login.css">
+</head>
+<body>
+    <header>
+        <h1>ShopSmart</h1>
+        <div class="logo"><img src="http://localhost/shopsmart_v_1.0.0.0.1/Imagenes/Logo_Saturn.png" alt="Logo"></div>
+        <nav>
+            <a href="http://localhost/shopsmart_v_1.0.0.0.1/index.html">Inicio</a>
+            <a href="http://localhost/shopsmart_v_1.0.0.0.1/html/register.html">Registro</a>
+            <a href="http://localhost/shopsmart_v_1.0.0.0.1/html/catalogo.html">Catálogo</a>
+        </nav>
+        <hr>
+        <div class="header"><div class="scrolling-tex">Venta de Viveres y Verduras</div></div>
+    </header>
+    <div class="page-container">
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm" method="post" action="http://localhost/shopsmart_v_1.0.0.0.1/php/login.php">
+            <label for="cedula">Número de Cédula:</label>
+            <input type="text" id="cedula" name="cedula" required>
+
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" name="clave" required>
+
+            <button type="submit">Iniciar Sesión</button>
+            <div class="error" id="error"></div>
+        </form>
+    </div>
+    </div>
+    <div class="footer">
+        <p>&copy;  ShopSmart: Tienda El Angel.
+            2024 Saturn Software Development.
+            Todos Los Derechos Reservados.
+        </p>
+    </div>
+</body>
+</html>
+

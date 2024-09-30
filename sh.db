@@ -1,0 +1,66 @@
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS shopsmart_v_1.0.0.0.1;
+
+-- Usar la base de datos recién creada
+USE shopsmart_v_1.0.0.0.1;
+
+-- Crear la tabla usuario
+CREATE TABLE IF NOT EXISTS usuario (
+    ID_Usuario INT(11) PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(50) NOT NULL,
+    Apellido VARCHAR(50) NOT NULL,
+    Cédula BIGINT(20) NOT NULL UNIQUE,
+    Correo VARCHAR(45) NOT NULL UNIQUE,
+    Teléfono BIGINT(20) NOT NULL,
+    Dirección VARCHAR(30) NOT NULL,
+    Clave VARCHAR(255) NOT NULL,
+    Tipo_Usuario INT(11) NOT NULL
+);
+
+-- Crear la tabla producto
+CREATE TABLE IF NOT EXISTS producto (
+    ID_Producto INT(11) PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(50) NOT NULL,
+    Descripción VARCHAR(100),
+    Precio DECIMAL(10,0) NOT NULL,
+    Inventario INT(11) NOT NULL,
+    Imagen VARCHAR(200)
+);
+
+-- Crear la tabla carrito
+CREATE TABLE IF NOT EXISTS carrito (
+    ID_Carrito INT(11) PRIMARY KEY AUTO_INCREMENT,
+    ID_Usuario INT(11),
+    ID_Producto INT(11),
+    Cantidad INT(11),
+    FOREIGN KEY (ID_Usuario) REFERENCES usuario(ID_Usuario),
+    FOREIGN KEY (ID_Producto) REFERENCES producto(ID_Producto)
+);
+
+-- Crear la tabla pedido
+CREATE TABLE IF NOT EXISTS pedido (
+    ID_Pedido INT(11) PRIMARY KEY AUTO_INCREMENT,
+    ID_Usuario INT(11),
+    Costo_Total DECIMAL(10,0),
+    Fecha DATE,
+    FOREIGN KEY (ID_Usuario) REFERENCES usuario(ID_Usuario)
+);
+
+-- Crear la tabla detalle_pedido
+CREATE TABLE IF NOT EXISTS detalle_pedido (
+    ID_Detalle_Pedido INT(11) PRIMARY KEY AUTO_INCREMENT,
+    ID_Pedido INT(11),
+    ID_Producto INT(11),
+    Cantidad_Producto INT(11),
+    FOREIGN KEY (ID_Pedido) REFERENCES pedido(ID_Pedido),
+    FOREIGN KEY (ID_Producto) REFERENCES producto(ID_Producto)
+);
+
+-- Crear la tabla factura
+CREATE TABLE IF NOT EXISTS factura (
+    ID_Factura INT(11) PRIMARY KEY AUTO_INCREMENT,
+    ID_Pedido INT(11),
+    Fecha DATE,
+    Total DECIMAL(10,0),
+    FOREIGN KEY (ID_Pedido) REFERENCES pedido(ID_Pedido)
+);

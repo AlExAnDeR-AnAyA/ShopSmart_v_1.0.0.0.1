@@ -1,0 +1,186 @@
+
+        
+/* Estilos para el catálogo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+/* Estilos para el encabezado */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: space-between;
+    font-size:x-large;
+    font-family:cursive;
+}
+
+/* Estilos para el logo */
+.logo{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logo img{
+    width: 50%;
+    height: 60%;
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el título */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los enlaces */
+nav {
+    text-align: center; /* Centra los enlaces dentro del contenedor */
+    margin-top: 20px; /* Añade espacio arriba del contenedor de navegación */
+}
+
+nav a {
+    display: inline-block; /* Permite aplicar padding y border a los enlaces */
+    padding: 10px 20px; /* Espacio interno del "botón" */
+    margin: 0 10px; /* Espacio entre los botones */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: black; /* Color del texto */
+    background-color: #00aeff; /* Color de fondo del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    font-size: 20px; /* Tamaño de la fuente */
+    transition: all 0.3s ease; /* Transición suave para el cambio de color y tamaño */
+}
+
+nav a:hover {
+    background-color: #b300a4; /* Color de fondo al pasar el puntero del mouse */
+    transform: scale(1.1); /* Aumenta el tamaño del botón */
+}
+
+/* Estilos para el texto en movimiento */
+.scrolling-tex{
+    white-space: nowrap;
+    animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(80%);
+    }
+    100%{
+        transform: translateX(-80%);
+    }
+}
+
+.container{
+    padding: 10px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    width: calc(15% - 20px);
+    box-sizing: border-box;
+}
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+.product h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+.product p {
+    color: #666;
+}
+.product button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.product button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el carrito flotante */
+.cart-container {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+     background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 60px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #be2727;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.cart-header h2 {
+     margin: 0;
+}
+.cart-header button {
+    background-color: red;
+    color: rgb(155, 29, 29);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cart-item p {
+    margin: 0;
+}
+.cart-item input {
+    width: 50px;
+}
+.cart-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    text-align: right;
+}
+#openCartButton {
+    position: fixed; /* O puede ser absolute, dependiendo de tu diseño */
+    right: 20px;
+    top: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001; /* Asegúrate de que esté por encima del carrito */
+}

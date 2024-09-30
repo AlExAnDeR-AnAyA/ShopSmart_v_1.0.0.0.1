@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="http://localhost/shopsmart_v_1.0.0.0.1/css/catalogo.css">
+</head>
+<body>
+    <header>
+        <h1>ShopSmart</h1>
+        <div class="logo"><img src="http://localhost/shopsmart_v_1.0.0.0.1/Imagenes/Logo_Saturn.png" alt="Logo"></div>
+        <nav>
+            <a href="http://localhost/shopsmart_v_1.0.0.0.1/index.html">Inicio</a>
+            <a href="http://localhost/shopsmart_v_1.0.0.0.1/html/login.html">Iniciar Sesión</a>
+            <a href="http://localhost/shopsmart_v_1.0.0.0.1/html/register.html">Registro</a>
+            <a href="http://localhost/shopsmart_v_1.0.0.0.1/php/index.html">Cerrar Sesión</a>
+        </nav>
+        <hr>
+        <div class="header"><div class="scrolling-tex">Venta de Viveres y Verduras</div></div>
+        <div class="user-info" id="user-info">
+            Usuario
+        </div>
+    </header>
+    <div class="container">
+        <h1>Catálogo de Productos</h1>
+        <div id="productList"></div>
+    </div>
+
+    <!-- Botón para mostrar el carrito -->
+    <button id="openCartButton"  onclick="toggleCart()">Ver Carrito</button>
+
+    <!-- Carrito flotante -->
+    <div id="cart" class="cart-container">
+        <div class="cart-header">
+            <h2>Carrito</h2>
+            <button onclick="toggleCart()">Cerrar</button>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-footer">
+            <p>Total: $<span id="cartTotal">0</span></p>
+            <label for="paymentMethod">Método de Pago:</label>
+            <select id="paymentMethod">
+                <option value="cash">Efectivo</option>
+                <option value="creditCard">Tarjeta de Crédito</option>
+                <option value="transfer">Transferencia Bancaria</option>
+            </select>
+            <button onclick="proceedToPayment()">Pagar</button>
+        </div>
+    </div>
+
+    <script src="http://localhost/shopsmart_v_1.0.0.0.1/js/catalogo.js"></script>
+    <script src="http://localhost/shopsmart_v_1.0.0.0.1/js/loadUserInfo.js"></script>
+</body>
+</html>
+
